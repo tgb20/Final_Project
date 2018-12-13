@@ -4,7 +4,7 @@
 The github repo says it was created on 12/13, but that is because I accidently published a version with the database password still on it and I just recently noticed. The original repo was made public on 12/11.
 
 # Live Demo
-There is currently not a live demo, this will be updated when one has been created.
+A live demo is available here: http://71.232.77.6:5000
 
 # Requirements
 
