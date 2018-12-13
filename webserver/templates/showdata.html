@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="static/alchemy/alchemy.min.css">
+        <link rel="stylesheet" href="static/alchemy/styles/vendor.css">
+    </head>
+    <body>
+        <div class="alchemy" id="alchemy"></div>
+        <script type="text/javascript" src="static/alchemy/scripts/vendor.js"></script>
+        <script type="text/javascript" src="static/alchemy/alchemy.min.js"></script>
+        <script type="text/javascript">
+
+            const scale = (num, in_min, in_max, out_min, out_max) => {
+                return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+            }
+
+
+
+            var message = ['{{ message }}'];
+            //var parsedJSON = JSON.parse(message[0]);
+            console.log(message[0])
+            var config = {
+                dataSource: 'static/' + message + '.json',
+                forceLocked: true,
+                graphHeight: function(){return screen.height;},
+                graphWidth: function(){return screen.width;},
+                nodeTypes: {"node_type":["Cast", "Podcast"]},
+                nodeCaption: function(node){return node.name;},
+                nodeStyle: {
+                "all": {
+                    "borderColor": function(d){
+                        
+                        var rtCount = d.getProperties().rta;
+                        var aoCount = d.getProperties().ao;
+                        var tpCount = d.getProperties().tp;
+
+
+                        if(rtCount > aoCount && rtCount > tpCount){
+                            return "#de0808";
+                        }
+                        if(tpCount > aoCount && tpCount > rtCount){
+                            return "#00a6ff";
+                        }
+                        if(aoCount > rtCount && aoCount > tpCount){
+                            return "#f9ff00";
+                        }else{
+                            return "#de0808";
+                        }
+
+                    },
+                    "borderWidth": function(d, radius) {
+                        return radius / 10
+                    },
+                    "color": function(d) { 
+                        return "rgba(255, 0, 0)";
+                    },
+                    "radius": function(d) {
+                        var rawRadius = d.getProperties().rta + d.getProperties().ao + d.getProperties().tp;
+                        var newRadius = scale(rawRadius, 0, 500, 10, 100)
+                        return newRadius;
+                    }
+                }
+            }
+            };
+            alchemy = new Alchemy(config);
+            
+        </script>
+    </body>
+</html>

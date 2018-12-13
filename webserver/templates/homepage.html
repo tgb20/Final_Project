@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Graph Databases</h1>
+        <h2>Final INFO 101 Project by Jacob Bashista</h2>
+        <br>
+        <a href="https://github.com/tgb20/Final_Project">View GitHub</a>
+        <br>
+        <h3>
+            About:
+        </h3>
+        <p>
+            This project looks at the relationships between 3 podcasts created by Rooster Teeth. It looks at who is on the cast as well as who else was with them. While it does not have a lot of use besides reference for the podcasts, it demonstrates the power of a graph database when it comes to complex relationships.
+        </p>
+        <ul>
+            <li><a href="https://github.com/tgb20/Final_Project/blob/master/builders/data/rtpodcast.csv">Rooster Teeth Podcast</a> Colored Red</li>
+            <li><a href="https://github.com/tgb20/Final_Project/blob/master/builders/data/alwaysopen.csv">Always Open Podcast</a> Colored Yellow</li>
+            <li><a href="https://github.com/tgb20/Final_Project/blob/master/builders/data/thepatch.csv">The Patch Podcast</a> Colored Blue</li>
+        </ul>
+
+        <h3>Features:</h3>
+        <form action="/nearestnodes">
+            <select name="person">
+                <option value="Gus">Gus</option>
+                <option value="Gavin">Gavin</option>
+                <option value="Barbara">Barbara</option>
+                <option value="Burnie">Burnie</option>
+                <option value="Geoff">Geoff</option>
+                <option value="Chris">Chris</option>
+                <option value="Blaine">Blaine</option>
+                <option value="Jon">Jon</option>
+                <option value="Becca">Becca</option>
+                <option value="Jordan">Jordan</option>
+                <option value="Ashley">Ashley</option>
+                <option value="Bethany">Bethany</option>
+                <option value="Adam E">Adam E</option>
+                <option value="Trevor">Trevor</option>
+                <option value="Miles">Miles</option>
+                <option value="Kerry">Kerry</option>
+                <option value="Tyler">Tyler</option>
+                <option value="Ellie">Ellie</option>
+                <option value="Brandon">Brandon</option>
+                <option value="Mariel">Mariel</option>
+                <option value="Aaron">Aaron</option>
+                <option value="Josh">Josh</option>
+                <option value="Lindsay">Lindsay</option>
+                <option value="Matt">Matt</option>
+                <option value="Gray">Gray</option>
+                <option value="Max">Max</option>
+                <option value="Patrick M">Patrick M</option>
+                <option value="Jessica">Jessica</option>
+                <option value="Joel">Joel</option>
+                <option value="Michael">Michael</option>
+                <option value="Jeremy">Jeremy</option>
+                <option value="Jack">Jack</option>
+                <option value="Meg">Meg</option>
+                <option value="Kara">Kara</option>
+                <option value="Ben K">Ben K</option>
+                <option value="Ray">Ray</option>
+                <option value="Monty">Monty</option>
+                <option value="Adam B">Adam B</option>
+                <option value="Eddy R">Eddy R</option>
+                <option value="Marshall">Marshall</option>
+                <option value="Kathleen">Kathleen</option>
+                <option value="Griffon">Griffon</option>
+            </select>
+            <input type="submit" value="Search">Find Nearest Nodes to Person</input>
+        </form>
+        <form action="/returnallpodcast">
+            <input type="submit" value="View">View Entire Database</input>
+        </form>
+    </body>
+</html>
